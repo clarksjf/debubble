@@ -49,6 +49,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem "paperclip", '~> 5.0.0'
 # SC added to allow image save to amazon s3 , 
 gem 'aws-sdk', '~> 2.3' 
+gem "libv8"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

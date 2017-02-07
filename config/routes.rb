@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   get 'users/:username', to: 'users#show'  
   get 'about', to: 'pages#about'
   get 'contactus', to:  'pages#contact'
+  get 'product_reviews', to: 'pages#product_reviews'
+  get 'new_product_delivery', to: 'pages#new_product_delivery'
+  get 'best_fit_product_delivery', to: 'pages#best_fit_product_delivery'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

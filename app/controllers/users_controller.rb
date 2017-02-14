@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  def show
-      @user = User.find_by(username: params[:username])
-      @tweets = @user.tweets
-  end
+
    
   def create
     # Create the user from params
@@ -13,7 +10,13 @@ class UsersController < ApplicationController
       redirect_to(@user, :notice => 'User created')
     else
       render :action => 'new'
-    end
   end
+
+
+  def show
+      @user = User.find_by(username: params[:username])
+      @tweets = @user.tweets
+  end
+
 end
 

@@ -94,11 +94,11 @@ config.paperclip_defaults = {
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
       s3_region: ENV.fetch('AWS_REGION'),
     }
-}
+  }
 
   ActionMailer::Base.smtp_settings = {
-    :user_name => 'app62890720@heroku.com',
-    :password => 'lw570smy0500',
+    :user_name => 'SENDGRID_USERNAME',
+    :password => 'SENDGRID_PASSWORD',
     :domain => 'debubble.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,

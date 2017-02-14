@@ -99,12 +99,23 @@ config.paperclip_defaults = {
 
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'SENDGRID_USERNAME',
-  :password => 'SENDGRID_PASSWORD',
-  :domain => 'debubble.herokuapp.com',
-  :address => 'smtp.sendgrid.net',
+  user_name: ENV.fetch('SENDGRID_USERNAME'),
+  password: ENV.fetch('SENDGRID_PASSWORD'),
+  domain: ENV.fetch('debubble.herokuapp.com'),
+  address: ENV.fetch('smtp.sendgrid.net'),
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
+
+# ActionMailer::Base.smtp_settings = {
+#   :user_name => 'SENDGRID_USERNAME',
+#   :password => 'SENDGRID_PASSWORD',
+#   :domain => 'debubble.herokuapp.com',
+#   :address => 'smtp.sendgrid.net',
+#   :port => 587,
+#   :authentication => :plain,
+#   :enable_starttls_auto => true
+# }
 end

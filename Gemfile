@@ -44,6 +44,13 @@ gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 # SC added to allow image save to amazon s3 , 
 gem 'aws-sdk', '~> 2.3' 
 
+# sc added in order to add contact us page https://github.com/JDutil/contact_us
+gem 'contact_us', '~> 1.0.1'
+
+# sc added to allow emails to be sent from heroku using sendgrid
+gem 'sendgrid-ruby'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

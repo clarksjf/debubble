@@ -104,7 +104,7 @@ ActionMailer::Base.smtp_settings = {
   :domain => 'debubble.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
-  :authentication => :login,
+  :authentication => :plain,
   :enable_starttls_auto => true
 }
 end

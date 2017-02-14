@@ -96,6 +96,7 @@ config.paperclip_defaults = {
     }
 
 }
+end
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'SENDGRID_USERNAME',
@@ -103,7 +104,7 @@ ActionMailer::Base.smtp_settings = {
   :domain => 'debubble.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
-  :authentication => :plain,
+  :authentication => :login,
   :enable_starttls_auto => true
 }
 end

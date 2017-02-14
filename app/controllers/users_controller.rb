@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     else
       render :action => 'new'
   end
-
+  end
 
   def show
       @user = User.find_by(username: params[:username])

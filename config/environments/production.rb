@@ -96,7 +96,7 @@ config.paperclip_defaults = {
     }
 
 }
-end
+
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'SENDGRID_USERNAME',

@@ -99,13 +99,12 @@ config.paperclip_defaults = {
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
-config.action_mailer.default :charset => "utf-8"
-config.action_mailer.default_url_options = { :host => 'http://myapp.herokuapp.com' }
+config.action_mailer.default_url_options = { :host => 'www.debubble.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'debubble.herokuapp.com',
+    :domain => 'www.debubble.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,

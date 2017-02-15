@@ -102,8 +102,8 @@ config.paperclip_defaults = {
 # config.action_mailer.default_url_options = { :host => 'www.debubble.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
-    user_name: => ENV.fetch('SENDGRID_USERNAME'),
-    password: => ENV.fetch('SENDGRID_PASSWORD'),
+    user_name: ENV.fetch('SENDGRID_USERNAME'),
+    password: ENV.fetch('SENDGRID_PASSWORD'),
     :domain => 'www.debubble.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,

@@ -42,7 +42,8 @@
   <% if ContactUs.require_name %>
       <label for="contact_us_contact_name_input" class="col-sm-2 control-label"><%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %></label>
       <div class="col-sm-10">
-        <input class='form-control' id='contact_us_contact_name_input' <%= f.text_field :name %>>
+        <input class='form-control' id='contact_us_contact_name_input' <%= f.text_field :name%></input>
+ 
     
 
 

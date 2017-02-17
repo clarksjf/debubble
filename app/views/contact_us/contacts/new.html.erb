@@ -8,7 +8,7 @@
 <% else %>
     <div class="jumbotron jumbotron-home">
         <div class="container">      
-            <h1>Contact Us</h1>
+            <h1>Contact us</h1>
         </div>
     </div>
     <div class="container">
@@ -17,8 +17,8 @@
  
 
 
-<!-- 
-<form>
+
+<!-- <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -36,8 +36,57 @@
 
 
 
+<%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+<form class="form-horizontal">
+  <div class="form-group">   
+  <% if ContactUs.require_name %>
+      <label for="contact_us_contact_name_input" class="col-sm-2 control-label"><%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %></label>
+      <div class="col-sm-10">
+        <input class='form-control' id='contact_us_contact_name_input' <%= f.text_field :name %>>
+    
 
-<h2><%= t('.contact_us') %></h2>
+
+
+
+<!--   <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>  -->
+
+<!-- SJC I have put the form label into the bootstrap but need to get the actual content into bootstrap field as at the moment it does not work -->
+<!--  <%= f.text_field :name %> -->
+      <% if f.object.errors[:name].present? %>
+        <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class='string required' id='contact_us_contact_email_input'>
+    <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_field :email %>
+    <% if f.object.errors[:email].present? %>
+      <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+    <% end %>
+  </div>
+  <% if ContactUs.require_subject %>
+    <div class='string required' id='contact_us_contact_subject_input'>
+      <%= f.label :subject, (t('.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+      <%= f.text_field :subject %>
+      <% if f.object.errors[:subject].present? %>
+        <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <div class='text required' id='contact_us_contact_message_input'>
+    <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+    <%= f.text_area :message %>
+    <% if f.object.errors[:message].present? %>
+      <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+    <% end %>
+  </div>
+  <div class='commit'>
+    <%= f.submit :submit, :class => 'submit create', :title => t('.submit') %>
+  </div>
+<% end %>
+</div>
+</form>
+<!--
 <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
   <% if ContactUs.require_name %>
     <div class='string required' id='contact_us_contact_name_input'>
@@ -77,3 +126,4 @@
 <% end %>
 </div>
 
+-->
